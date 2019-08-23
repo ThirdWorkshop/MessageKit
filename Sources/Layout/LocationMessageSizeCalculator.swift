@@ -23,6 +23,7 @@
  */
 
 import Foundation
+import CoreGraphics
 
 open class LocationMessageSizeCalculator: MessageSizeCalculator {
 

@@ -162,21 +162,21 @@ open class MessageContentCell: MessageCollectionViewCell {
 
         switch true {
         case messageContainerView.frame.contains(touchLocation) && !cellContentView(canHandle: convert(touchLocation, to: messageContainerView)):
-            delegate?.didTapMessage(in: self)
+            delegate?.didTapMessage(in: self, gesture: gesture)
         case avatarView.frame.contains(touchLocation):
-            delegate?.didTapAvatar(in: self)
+            delegate?.didTapAvatar(in: self, gesture: gesture)
         case cellTopLabel.frame.contains(touchLocation):
-            delegate?.didTapCellTopLabel(in: self)
+            delegate?.didTapCellTopLabel(in: self, gesture: gesture)
         case cellBottomLabel.frame.contains(touchLocation):
-            delegate?.didTapCellBottomLabel(in: self)
+            delegate?.didTapCellBottomLabel(in: self, gesture: gesture)
         case messageTopLabel.frame.contains(touchLocation):
-            delegate?.didTapMessageTopLabel(in: self)
+            delegate?.didTapMessageTopLabel(in: self, gesture: gesture)
         case messageBottomLabel.frame.contains(touchLocation):
-            delegate?.didTapMessageBottomLabel(in: self)
+            delegate?.didTapMessageBottomLabel(in: self, gesture: gesture)
         case accessoryView.frame.contains(touchLocation):
-            delegate?.didTapAccessoryView(in: self)
+            delegate?.didTapAccessoryView(in: self, gesture: gesture)
         default:
-            delegate?.didTapBackground(in: self)
+            delegate?.didTapBackground(in: self, gesture: gesture)
         }
     }
 

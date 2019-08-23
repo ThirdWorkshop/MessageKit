@@ -23,6 +23,7 @@
  */
 
 import Foundation
+import UIKit
 
 // swiftlint:disable explicit_acl
 
@@ -37,5 +38,7 @@ internal extension UIColor {
     static let playButtonLightGray = UIColor(red: 230/255, green: 230/255, blue: 230/255, alpha: 1.0)
 
     static let sendButtonBlue = UIColor(red: 15/255, green: 135/255, blue: 255/255, alpha: 1.0)
+    
+    static let primaryColor = GlobalConstants.Colors.BrettBlue //UIColor(red: 69/255, green: 193/255, blue: 89/255, alpha: 1)
 
 }

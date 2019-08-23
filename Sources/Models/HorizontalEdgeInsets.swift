@@ -23,6 +23,7 @@
  */
 
 import Foundation
+import CoreGraphics
 
 /// A varient of `UIEdgeInsets` that only has horizontal inset properties
 public struct HorizontalEdgeInsets: Equatable {
