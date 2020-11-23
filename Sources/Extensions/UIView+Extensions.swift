@@ -24,8 +24,6 @@
 
 import UIKit
 
-// swiftlint:disable explicit_acl
-
 internal extension UIView {
     
     func fillSuperview() {

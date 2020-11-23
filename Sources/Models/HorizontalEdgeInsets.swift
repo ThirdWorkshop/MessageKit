@@ -23,7 +23,7 @@
  */
 
 import Foundation
-import CoreGraphics
+import UIKit
 
 /// A varient of `UIEdgeInsets` that only has horizontal inset properties
 public struct HorizontalEdgeInsets: Equatable {
@@ -40,6 +40,8 @@ public struct HorizontalEdgeInsets: Equatable {
         return HorizontalEdgeInsets(left: 0, right: 0)
     }
 }
+
+// MARK: Equatable Conformance
 
 public extension HorizontalEdgeInsets {
 

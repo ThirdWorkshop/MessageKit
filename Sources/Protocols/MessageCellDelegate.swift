@@ -23,7 +23,6 @@
  */
 
 import Foundation
-import UIKit
 
 /// A protocol used by `MessageContentCell` subclasses to detect taps in the cell's subviews.
 public protocol MessageCellDelegate: MessageLabelDelegate {
@@ -37,7 +36,7 @@ public protocol MessageCellDelegate: MessageLabelDelegate {
     /// You can get a reference to the `MessageType` for the cell by using `UICollectionView`'s
     /// `indexPath(for: cell)` method. Then using the returned `IndexPath` with the `MessagesDataSource`
     /// method `messageForItem(at:indexPath:messagesCollectionView)`.
-    func didTapBackground(in cell: MessageCollectionViewCell, gesture: UIGestureRecognizer)
+    func didTapBackground(in cell: MessageCollectionViewCell)
 
     /// Triggered when a tap occurs in the `MessageContainerView`.
     ///
@@ -48,7 +47,7 @@ public protocol MessageCellDelegate: MessageLabelDelegate {
     /// You can get a reference to the `MessageType` for the cell by using `UICollectionView`'s
     /// `indexPath(for: cell)` method. Then using the returned `IndexPath` with the `MessagesDataSource`
     /// method `messageForItem(at:indexPath:messagesCollectionView)`.
-    func didTapMessage(in cell: MessageCollectionViewCell, gesture: UIGestureRecognizer)
+    func didTapMessage(in cell: MessageCollectionViewCell)
 
     /// Triggered when a tap occurs in the `AvatarView`.
     ///
@@ -58,7 +57,7 @@ public protocol MessageCellDelegate: MessageLabelDelegate {
     /// You can get a reference to the `MessageType` for the cell by using `UICollectionView`'s
     /// `indexPath(for: cell)` method. Then using the returned `IndexPath` with the `MessagesDataSource`
     /// method `messageForItem(at:indexPath:messagesCollectionView)`.
-    func didTapAvatar(in cell: MessageCollectionViewCell, gesture: UIGestureRecognizer)
+    func didTapAvatar(in cell: MessageCollectionViewCell)
 
     /// Triggered when a tap occurs in the cellTopLabel.
     ///
@@ -68,7 +67,7 @@ public protocol MessageCellDelegate: MessageLabelDelegate {
     /// You can get a reference to the `MessageType` for the cell by using `UICollectionView`'s
     /// `indexPath(for: cell)` method. Then using the returned `IndexPath` with the `MessagesDataSource`
     /// method `messageForItem(at:indexPath:messagesCollectionView)`.
-    func didTapCellTopLabel(in cell: MessageCollectionViewCell, gesture: UIGestureRecognizer)
+    func didTapCellTopLabel(in cell: MessageCollectionViewCell)
     
     /// Triggered when a tap occurs in the cellBottomLabel.
     ///
@@ -78,7 +77,7 @@ public protocol MessageCellDelegate: MessageLabelDelegate {
     /// You can get a reference to the `MessageType` for the cell by using `UICollectionView`'s
     /// `indexPath(for: cell)` method. Then using the returned `IndexPath` with the `MessagesDataSource`
     /// method `messageForItem(at:indexPath:messagesCollectionView)`.
-    func didTapCellBottomLabel(in cell: MessageCollectionViewCell, gesture: UIGestureRecognizer)
+    func didTapCellBottomLabel(in cell: MessageCollectionViewCell)
     
     /// Triggered when a tap occurs in the messageTopLabel.
     ///
@@ -88,7 +87,7 @@ public protocol MessageCellDelegate: MessageLabelDelegate {
     /// You can get a reference to the `MessageType` for the cell by using `UICollectionView`'s
     /// `indexPath(for: cell)` method. Then using the returned `IndexPath` with the `MessagesDataSource`
     /// method `messageForItem(at:indexPath:messagesCollectionView)`.
-    func didTapMessageTopLabel(in cell: MessageCollectionViewCell, gesture: UIGestureRecognizer)
+    func didTapMessageTopLabel(in cell: MessageCollectionViewCell)
 
     /// Triggered when a tap occurs in the messageBottomLabel.
     ///
@@ -98,7 +97,7 @@ public protocol MessageCellDelegate: MessageLabelDelegate {
     /// You can get a reference to the `MessageType` for the cell by using `UICollectionView`'s
     /// `indexPath(for: cell)` method. Then using the returned `IndexPath` with the `MessagesDataSource`
     /// method `messageForItem(at:indexPath:messagesCollectionView)`.
-    func didTapMessageBottomLabel(in cell: MessageCollectionViewCell, gesture: UIGestureRecognizer)
+    func didTapMessageBottomLabel(in cell: MessageCollectionViewCell)
     
     /// Triggered when a tap occurs in the accessoryView.
     ///
@@ -108,7 +107,17 @@ public protocol MessageCellDelegate: MessageLabelDelegate {
     /// You can get a reference to the `MessageType` for the cell by using `UICollectionView`'s
     /// `indexPath(for: cell)` method. Then using the returned `IndexPath` with the `MessagesDataSource`
     /// method `messageForItem(at:indexPath:messagesCollectionView)`.
-    func didTapAccessoryView(in cell: MessageCollectionViewCell, gesture: UIGestureRecognizer)
+    func didTapAccessoryView(in cell: MessageCollectionViewCell)
+
+    /// Triggered when a tap occurs on the image.
+    ///
+    /// - Parameters:
+    ///   - cell: The image where the touch occurred.
+    ///
+    /// You can get a reference to the `MessageType` for the cell by using `UICollectionView`'s
+    /// `indexPath(for: cell)` method. Then using the returned `IndexPath` with the `MessagesDataSource`
+    /// method `messageForItem(at:indexPath:messagesCollectionView)`.
+    func didTapImage(in cell: MessageCollectionViewCell)
 
     /// Triggered when a tap occurs on the play button from audio cell.
     ///
@@ -118,7 +127,7 @@ public protocol MessageCellDelegate: MessageLabelDelegate {
     /// You can get a reference to the `MessageType` for the cell by using `UICollectionView`'s
     /// `indexPath(for: cell)` method. Then using the returned `IndexPath` with the `MessagesDataSource`
     /// method `messageForItem(at:indexPath:messagesCollectionView)`.
-    func didTapPlayButton(in cell: AudioMessageCell, gesture: UIGestureRecognizer)
+    func didTapPlayButton(in cell: AudioMessageCell)
 
     /// Triggered when audio player start playing audio.
     ///
@@ -128,7 +137,7 @@ public protocol MessageCellDelegate: MessageLabelDelegate {
     /// You can get a reference to the `MessageType` for the cell by using `UICollectionView`'s
     /// `indexPath(for: cell)` method. Then using the returned `IndexPath` with the `MessagesDataSource`
     /// method `messageForItem(at:indexPath:messagesCollectionView)`.
-    func didStartAudio(in cell: AudioMessageCell, gesture: UIGestureRecognizer)
+    func didStartAudio(in cell: AudioMessageCell)
 
     /// Triggered when audio player pause audio.
     ///
@@ -138,7 +147,7 @@ public protocol MessageCellDelegate: MessageLabelDelegate {
     /// You can get a reference to the `MessageType` for the cell by using `UICollectionView`'s
     /// `indexPath(for: cell)` method. Then using the returned `IndexPath` with the `MessagesDataSource`
     /// method `messageForItem(at:indexPath:messagesCollectionView)`.
-    func didPauseAudio(in cell: AudioMessageCell, gesture: UIGestureRecognizer)
+    func didPauseAudio(in cell: AudioMessageCell)
 
     /// Triggered when audio player stoped audio.
     ///
@@ -148,7 +157,7 @@ public protocol MessageCellDelegate: MessageLabelDelegate {
     /// You can get a reference to the `MessageType` for the cell by using `UICollectionView`'s
     /// `indexPath(for: cell)` method. Then using the returned `IndexPath` with the `MessagesDataSource`
     /// method `messageForItem(at:indexPath:messagesCollectionView)`.
-    func didStopAudio(in cell: AudioMessageCell, gesture: UIGestureRecognizer)
+    func didStopAudio(in cell: AudioMessageCell)
 
 }
 
@@ -165,6 +174,8 @@ public extension MessageCellDelegate {
     func didTapCellBottomLabel(in cell: MessageCollectionViewCell) {}
 
     func didTapMessageTopLabel(in cell: MessageCollectionViewCell) {}
+
+    func didTapImage(in cell: MessageCollectionViewCell) {}
 
     func didTapPlayButton(in cell: AudioMessageCell) {}
 

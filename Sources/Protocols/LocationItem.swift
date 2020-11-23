@@ -22,8 +22,9 @@
  SOFTWARE.
  */
 
+import Foundation
+import UIKit
 import class CoreLocation.CLLocation
-import CoreGraphics
 
 /// A protocol used to represent the data for a location message.
 public protocol LocationItem {
